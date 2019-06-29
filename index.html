@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>投票画面</title>
+    <link rel="stylesheet" href="vote_style.css"/>
+  </head>
+    
+  <body onload="PageLoad()">
+    <div class="wrapper">
+      <div class="title"><b>■投票画面■</b></div>
+      
+      <div class="p_title">P</div>
+      <div class="p_vote_title">rank</div>
+      
+      <div class="p_explain">
+        
+        <label>
+        <input type="checkbox" class="p_checkbox" id="check_p1">
+        <b>制限時間</b>が守られていたか<br>
+        </label>
+        
+        <label>
+        <input type="checkbox" class="p_checkbox" id="check_p2">
+        <b>意見・質問に対する回答</b>がしっかりしていたか<br>
+        </label>
+        
+        <label>
+        <input type="checkbox" class="p_checkbox" id="check_p3">
+        発表内容に対して<b>興味深いと思える点</b>が1つでもあったか<br>
+        </label>
+        
+        <label>
+        <input type="checkbox" class="p_checkbox" id="check_p4">
+        <b>発表態度</b>は良かったか、<b>声の大きさ</b>と<b>抑揚</b><br>
+        </label>
+        
+        <label>
+        <input type="checkbox" class="p_checkbox" id="check_p5">
+        話に<b>リズム・キレ・ストーリー性</b>があったか<br>
+        </label>
+        
+      </div>
+      <!--下記から必要なものを色々追加しました-->
+      <!--onkeyup=""で入力を逐一確認し、addvalue(this)を実行している(thisでinputの要素を受け取り)-->
+      <!--autocompleteで予測変換を実装できるようにする-->
+      <!--listでそれぞれのリストの指定-->
+      <!--datalistが予測変換の際のリストを入れる場所(中のリストはリアルタイムで追加)-->
+      <div class="p_vote">
+        
+        <form name="p_form">
+        <div class="rank_num">1位
+          <input id="p_1" type="text" maxlength="10" onchange="submit_p1()" onkeyup="addValue(this)" list="my-friendsp_1" autocomplete="true" disabled>
+          <datalist id="my-friendsp_1"></datalist>
+        </div>
+        
+        <div class="rank_num">2位
+          <input id="p_2" type="text" maxlength="10" onchange="submit_p2()" onkeyup="addValue(this)" list="my-friendsp_2" autocomplete="true" disabled>
+          <datalist id="my-friendsp_2"></datalist>
+        </div>
+        
+        <div class="rank_num">3位
+          <input id="p_3" type="text" maxlength="10" onchange="submit_p3()" onkeyup="addValue(this)" list="my-friendsp_3" autocomplete="true" disabled>
+          <datalist id="my-friendsp_3"></datalist>
+        </div>
+        
+        <div class="rank_num">4位
+          <input id="p_4" type="text" maxlength="10" onchange="submit_p4()" onkeyup="addValue(this)" list="my-friendsp_4" autocomplete="true" disabled>
+          <datalist id="my-friendsp_4"></datalist>
+        </div>
+        </form>
+        
+      </div>
+      
+      <div class="fg_title">FG</div>
+      <div class="fg_vote_title">rank</div>
+      
+      <div class="fg_explain">
+        
+        <label>
+        <input type="checkbox" class="fg_checkbox" id="check_fg1">
+        発表内容や意見の<b>整理</b>、<b>グラフィックの見やすさ</b><br>
+        </label>
+        
+        <label>
+        <input type="checkbox" class="fg_checkbox" id="check_fg2">
+        場に対して，討論が発生するような<b>問題（議題）提起</b>ができていたか<br>
+        </label>
+        
+        <label>
+        <input type="checkbox" class="fg_checkbox" id="check_fg3">
+        <b>ファシリテート</b>はしっかり行えていたか<br>
+        </label>
+        
+      </div>
+      
+      <!--下記から必要なものを色々追加しました-->
+      <!--onkeyup=""で入力を逐一確認し、addvalue(this)を実行している(thisでinputの要素を受け取り)-->
+      <!--autocompleteで予測変換を実装できるようにする-->
+      <!--listでそれぞれのリストの指定-->
+      <!--datalistが予測変換の際のリストを入れる場所(中のリストはリアルタイムで追加)-->
+      <div class="fg_vote">
+        
+        <form name="fg_form">
+        <div class="rank_num">1位
+          <input id="fg_1" type="text" maxlength="10" onchange="submit_fg1()" onkeyup="addValue(this)" list="my-friendsfg_1" autocomplete="true" disabled>
+          <datalist id="my-friendsfg_1"></datalist>
+        </div>
+        
+        <div class="rank_num">2位
+          <input id="fg_2" type="text" maxlength="10" onchange="submit_fg2()" onkeyup="addValue(this)" list="my-friendsfg_2" autocomplete="true" disabled>
+          <datalist id="my-friendsfg_2"></datalist>
+        </div>
+        
+        <div class="rank_num">3位
+          <input id="fg_3" type="text" maxlength="10" onchange="submit_fg3()" onkeyup="addValue(this)" list="my-friendsfg_3" autocomplete="true" disabled>
+          <datalist id="my-friendsfg_3"></datalist>
+        </div>
+        
+        <div class="rank_num">4位
+          <input id="fg_4" type="text" maxlength="10" onchange="submit_fg4()" onkeyup="addValue(this)" list="my-friendsfg_4" autocomplete="true" disabled>
+          <datalist id="my-friendsfg_4"></datalist>
+        </div>
+        </form>
+        
+      </div>
+            
+      <form name="send">
+        <input type="button" id="submit_vote" value="送信" onclick="btn_send()" disabled>
+      </form>
+      <!--
+      <button id="submit_vote" onclick="submit()">投票</button>
+      -->
+    </div>
+  
+    <script type="text/javascript" src="vote_script.js"></script>
+  </body>
+</html>
