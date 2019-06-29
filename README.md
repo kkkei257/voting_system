@@ -19,4 +19,4 @@
 指定人数だけ名前を入力している、入力された名前が全て登録されているものである時のみ押せるようになっています。
 投票ボタンを押すと投票結果画面に遷移します。現時点ではまだ投票画面は完成していないため、仮の画面が表示されるようになっています。
 
-<img src="screenshot1.png"> <img src="screenshot2.png">   
+<img src="screenshot1.png" width="49%"> <img src="screenshot2.png" width="49%">   
