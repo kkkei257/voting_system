@@ -19,4 +19,9 @@
 指定人数だけ名前を入力している、入力された名前が全て登録されているものである時のみ押せるようになっています。
 投票ボタンを押すと投票結果画面に遷移します。現時点ではまだ投票画面は完成していないため、仮の画面が表示されるようになっています。
 
-![screenshot1](https://github.com/kkkei257/voting_system_screenshot1.png)
+<table border="0>
+<tr>
+<td><img src="screenshot1.png"></td>
+<td><img src="screenshot2.png"></td>
+</tr>
+</table>      
